@@ -84,11 +84,25 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: 'Internal server error' });
 });
 
-// Start server
+// Initialize database connection
+let dbConnected = false;
+async function initializeDatabase() {
+  if (!dbConnected) {
+    try {
+      await connectToDatabase();
+      dbConnected = true;
+      console.log('✅ Database connected');
+    } catch (error) {
+      console.error('Failed to connect to database:', error);
+      throw error;
+    }
+  }
+}
+
+// Start server (for local development)
 async function startServer() {
   try {
-    // Connect to MongoDB
-    await connectToDatabase();
+    await initializeDatabase();
     
     // Start listening
     app.listen(PORT, () => {
@@ -102,5 +116,13 @@ async function startServer() {
   }
 }
 
-startServer();
+// Export app for serverless (Vercel)
+export default app;
+
+// Start server only if running directly (not imported as a module)
+// Check if this file is being run directly
+const isMainModule = process.argv[1] && process.argv[1].endsWith('server.js');
+if (isMainModule && process.env.VERCEL !== '1') {
+  startServer();
+}
 
