@@ -27,12 +27,22 @@ const corsOptions = {
       }
     }
     
-    // In production, use the configured FRONTEND_URL
-    const allowedOrigins = process.env.FRONTEND_URL 
-      ? process.env.FRONTEND_URL.split(',').map(url => url.trim())
-      : ['http://localhost:5173', 'http://localhost:8080'];
+    // Default allowed origins (production frontend URLs)
+    const defaultOrigins = [
+      'http://localhost:5173', 
+      'http://localhost:8080',
+      'https://zero-defect-summit.vercel.app'
+    ];
     
-    if (allowedOrigins.includes(origin)) {
+    // In production, use the configured FRONTEND_URL or default origins
+    const allowedOrigins = process.env.FRONTEND_URL 
+      ? process.env.FRONTEND_URL.split(',').map(url => url.trim().replace(/\/$/, ''))
+      : defaultOrigins;
+    
+    // Normalize origin (remove trailing slash for comparison)
+    const normalizedOrigin = origin.replace(/\/$/, '');
+    
+    if (allowedOrigins.includes(normalizedOrigin) || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
       callback(new Error('Not allowed by CORS'));
