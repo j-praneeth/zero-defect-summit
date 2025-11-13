@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 215 100% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 100% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 100% 12%;
+
+    /* Axygen Pharmatech Primary Blue #002060 */
+    --primary: 215 100% 19%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Light blue for secondary elements */
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 215 100% 12%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 20% 45%;
+
+    /* Axygen Pharmatech Accent Orange #f58220 */
+    --accent: 25 91% 54%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 215 100% 19%;
+
+    --radius: 0.75rem;
+    
+    /* Custom design tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(215 100% 19%) 0%, hsl(215 100% 30%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(25 91% 54%) 0%, hsl(25 91% 64%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(215 100% 19%) 0%, hsl(215 100% 25%) 50%, hsl(215 100% 30%) 100%);
+    --shadow-elegant: 0 10px 40px -10px hsl(215 100% 19% / 0.3);
+    --shadow-glow: 0 0 40px hsl(25 91% 54% / 0.2);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 215 100% 8%;
+    --foreground: 0 0% 98%;
+
+    --card: 215 100% 12%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 215 100% 12%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 215 100% 19%;
+
+    --secondary: 215 50% 15%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 215 50% 15%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 25 91% 54%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 215 50% 15%;
+    --input: 215 50% 15%;
+    --ring: 25 91% 54%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
