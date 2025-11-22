@@ -1,0 +1,155 @@
+/* Container for the responsive map */
+.floor-map-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden; /* Prevents hotspots from overflowing during scale animation */
+    border-radius: 0.5rem; /* Optional: rounds the corners of the container */
+  }
+  
+  /* Responsive image */
+  .floor-map-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    pointer-events: none; /* Prevents dragging/selecting the image */
+  }
+  
+  /* Hotspot base styles - Invisible by default */
+  .hotspot {
+    position: absolute;
+    background-color: transparent;
+    border: 2px solid transparent; /* Invisible border but keeps layout stable */
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 10;
+    border-radius: 4px;
+    -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
+  }
+  
+  /* Hotspot hover/active effect */
+  .hotspot:hover,
+  .hotspot:active,
+  .hotspot:focus {
+    transform: scale(1.05);
+    z-index: 20;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+  
+  /* Area-specific colors */
+  .hotspot[data-area="Ballroom"]:hover,
+  .hotspot[data-area="Ballroom"]:active {
+    background-color: rgba(249, 115, 22, 0.3); /* Orange-500 */
+    border: 2px solid rgba(249, 115, 22, 0.8);
+  }
+  
+  .hotspot[data-area="Pre-Function Area"]:hover,
+  .hotspot[data-area="Pre-Function Area"]:active {
+    background-color: rgba(234, 179, 8, 0.3); /* Yellow-500 */
+    border: 2px solid rgba(234, 179, 8, 0.8);
+  }
+  
+  .hotspot[data-area="Entrance"]:hover,
+  .hotspot[data-area="Entrance"]:active {
+    background-color: rgba(234, 179, 8, 0.3); /* Yellow-500 */
+    border: 2px solid rgba(234, 179, 8, 0.8);
+  }
+  
+  /* Fallback default */
+  .hotspot:not([data-area]):hover,
+  .hotspot:not([data-area]):active {
+    background-color: rgba(56, 189, 248, 0.3);
+    border: 2px solid rgba(56, 189, 248, 0.8);
+  }
+  
+  /* Tooltip base styles */
+  .hotspot::after {
+    content: attr(data-label);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px); /* Start slightly lower for animation */
+    
+    background-color: rgba(15, 23, 42, 0.95); /* Dark background (slate-900) */
+    color: #ffffff;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    min-width: 180px;
+    white-space: pre-wrap;
+    text-align: center;
+    pointer-events: none;
+    
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease-out;
+    margin-bottom: 8px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4px);
+  }
+  
+  /* Tooltip triangle/arrow */
+  .hotspot::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    
+    border-width: 6px;
+    border-style: solid;
+    border-color: rgba(15, 23, 42, 0.95) transparent transparent transparent;
+    
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease-out;
+    margin-bottom: -4px; /* Adjust to connect with tooltip */
+    pointer-events: none;
+  }
+  
+  /* Show tooltip on hover/focus/active */
+  .hotspot:hover::after,
+  .hotspot:hover::before,
+  .hotspot:active::after,
+  .hotspot:active::before,
+  .hotspot:focus::after,
+  .hotspot:focus::before {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+  }
+  
+  /* Mobile responsiveness adjustments */
+  @media (max-width: 768px) {
+    .hotspot::after {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.5rem;
+      min-width: 140px; /* Slightly narrower on mobile */
+    }
+    
+    /* On touch devices, make hotspots slightly visible by default */
+    .hotspot {
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 1px dashed rgba(255, 255, 255, 0.3);
+    }
+    
+    /* Ensure active state (tap) triggers the full effect */
+    .hotspot:active {
+      background-color: rgba(56, 189, 248, 0.3);
+      border-style: solid;
+    }
+    
+    /* Match area specific active states on mobile */
+    .hotspot[data-area="Ballroom"]:active {
+      background-color: rgba(249, 115, 22, 0.3);
+      border-color: rgba(249, 115, 22, 0.8);
+    }
+    
+    .hotspot[data-area="Pre-Function Area"]:active,
+    .hotspot[data-area="Entrance"]:active {
+      background-color: rgba(234, 179, 8, 0.3);
+      border-color: rgba(234, 179, 8, 0.8);
+    }
+  }
