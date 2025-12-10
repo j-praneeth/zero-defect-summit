@@ -26,7 +26,7 @@ const Hero = () => {
         clearInterval(interval);
         return;
       }
-
+  
       setTimeLeft({
         days: Math.floor(distance / (1000 * 60 * 60 * 24)),
         hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),

@@ -45,6 +45,7 @@ const KnowledgePartners = () => {
                   className="max-h-20 max-w-full object-contain"
                 />
               </div>
+              
             ))}
           </div>
         </div>
