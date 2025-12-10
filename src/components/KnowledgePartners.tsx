@@ -15,11 +15,6 @@ const KnowledgePartners = () => {
       logo: sotaxLogo
     },
     {
-      name: "Bectochem Lödige",
-      tagline: "Process Technology",
-      logo: bectochemLogo
-    },
-    {
       name: "Hyderabad Tubes & Ducts (P) Ltd.",
       logo: hyderabadTubesLogo
     }
@@ -38,11 +33,11 @@ const KnowledgePartners = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="flex flex-wrap justify-center gap-8">
             {partners.map((partner, index) => (
               <div
                 key={index}
-                className="bg-card border-2 rounded-lg p-8 flex items-center justify-center hover:shadow-lg transition-shadow"
+                className="bg-card border-2 rounded-lg p-8 flex items-center justify-center hover:shadow-lg transition-shadow w-[calc(50%-1rem)] md:w-auto"
               >
                 <img
                   src={partner.logo}
