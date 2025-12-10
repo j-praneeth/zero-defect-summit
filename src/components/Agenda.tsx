@@ -16,15 +16,18 @@ const Agenda = () => {
   ];
 
   const day2Sessions = [
-    { time: "09:00 - 09:30", title: "Day 1 Recap & Q&A", icon: Clock },
-    { time: "09:30 - 11:00", title: "Coating Pan Technology & Process Parameters", icon: Clock },
-    { time: "11:00 - 11:15", title: "Coffee Break", icon: Coffee },
-    { time: "11:15 - 13:00", title: "Coating Defects: Prevention & Solutions", icon: Clock },
-    { time: "13:00 - 14:00", title: "Lunch Break", icon: Utensils },
-    { time: "14:00 - 15:30", title: "Quality Control & In-Process Testing", icon: Clock },
-    { time: "15:30 - 15:45", title: "Afternoon Tea", icon: Coffee },
-    { time: "15:45 - 17:00", title: "Best Practices & Equipment Maintenance", icon: Clock },
-    { time: "17:00 - 17:30", title: "Final Q&A & Certificate Distribution", icon: Clock },
+    { time: "09:30 - 09:45", title: "Recap of Day 1 & Kickoff for Coating Pan Discussions", icon: Clock },
+    { time: "09:45 - 11:15", title: "Understanding the 10 Critical Coating Pan CPPs Monitored by FDA", icon: Clock },
+    { time: "11:15 - 11:30", title: "Tea Break", icon: Coffee },
+    { time: "11:30 - 12:30", title: "Setting Up the Coating Pan for Success — Solution Prep, Gun Geometry, Spray Rate Verification, Droplet Control", icon: Clock },
+    { time: "12:30 - 13:15", title: "Lunch Break", icon: Utensils },
+    { time: "13:15 - 14:15", title: "Tablet Coating Defects: Identification, Root Cause Analysis & Corrective Strategies", icon: Clock },
+    { time: "14:15 - 14:45", title: "Case Study Review (2 Real-Time Incidents)", icon: Clock },
+    { time: "14:45 - 15:00", title: "Break", icon: Coffee },
+    { time: "15:00 - 15:45", title: "Aqueous Film Coating Strategy to Achieve 99% Yield — End-to-End Parameter Optimization", icon: Clock },
+    { time: "15:45 - 16:15", title: "Guest Session by SOTAX Team", icon: Clock },
+    { time: "16:15 - 16:45", title: "Q&A by GANSONS Team", icon: Clock },
+    { time: "16:45 - 17:00", title: "Workshop Closure & Feedback", icon: Clock },
   ];
 
   return (

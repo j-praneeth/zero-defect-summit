@@ -27,14 +27,15 @@ const AgendaPage = () => {
     { time: "09:30 - 09:45", title: "Recap of Day 1 & Kickoff for Coating Pan Discussions", icon: Clock, duration: "15 Minutes", description: "Alignment on problem statements" },
     { time: "09:45 - 11:15", title: "Understanding the 10 Critical Coating Pan CPPs Monitored by FDA", icon: Clock, duration: "1.5 Hours", description: "Includes inlet/outlet temperature, pan speed, atomization pressure, pattern width" },
     { time: "11:15 - 11:30", title: "Tea Break", icon: Coffee, duration: "15 Minutes", description: "" },
-    { time: "11:30 - 12:30", title: "Setting Up the Coating Pan for Success — Solution Prep, Gun Geometry, Spray Rate Validation, Droplet Control", icon: Clock, duration: "1 Hour", description: "Demonstration with schematics" },
+    { time: "11:30 - 12:30", title: "Setting Up the Coating Pan for Success — Solution Prep, Gun Geometry, Spray Rate Verification, Droplet Control", icon: Clock, duration: "1 Hour", description: "Demonstration with schematics" },
     { time: "12:30 - 13:15", title: "Lunch Break", icon: Utensils, duration: "45 Minutes", description: "" },
-    { time: "13:15 - 14:15", title: "Film Coating Defects: Identification, Root Cause Analysis & Corrective Strategies", icon: Clock, duration: "1 Hour", description: "Includes color variation, erosion, sticking, roughness, twinning, orange peel" },
-    { time: "14:15 - 14:45", title: "Case Study Review (2 Real-Time Incidents)", icon: Clock, duration: "30 Minutes", description: "Defect/CAPA" },
+    { time: "13:15 - 14:15", title: "Tablet Coating Defects: Identification, Root Cause Analysis & Corrective Strategies", icon: Clock, duration: "1 Hour", description: "Includes color variation, erosion, sticking, roughness, twinning, orange peel" },
+    { time: "14:15 - 14:45", title: "Case Study Review (2 Real-Time Incidents)", icon: Clock, duration: "30 Minutes", description: "Defect-to-CAPA" },
     { time: "14:45 - 15:00", title: "Break", icon: Coffee, duration: "15 Minutes", description: "" },
     { time: "15:00 - 15:45", title: "Aqueous Film Coating Strategy to Achieve 99% Yield — End-to-End Parameter Optimization", icon: Clock, duration: "45 Minutes", description: "Throughput vs quality controls" },
-    { time: "15:45 - 16:15", title: "Case Study Review (2 Real-Time Incidents)", icon: Clock, duration: "30 Minutes", description: "Review of success stories" },
-    { time: "16:15 - 17:00", title: "Workshop Closure & Feedback", icon: Clock, duration: "45 Minutes", description: "Certificates / Next Steps" },
+    { time: "15:45 - 16:15", title: "Guest Session by SOTAX Team", icon: Clock, duration: "30 Minutes", description: "Mr. Ganesh Deshpande" },
+    { time: "16:15 - 16:45", title: "Q&A by GANSONS Team", icon: Clock, duration: "30 Minutes", description: "Mr. Ashis Banerjee & Team" },
+    { time: "16:45 - 17:00", title: "Workshop Closure & Feedback", icon: Clock, duration: "15 Minutes", description: "Certificates / Next Steps" },
   ];
 
   const sessions = activeDay === "day1" ? day1Sessions : day2Sessions;
