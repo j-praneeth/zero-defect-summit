@@ -228,28 +228,30 @@ const RegistrationForm = () => {
           <h4 className="text-xl font-bold text-foreground mb-4">
             Need Assistance?
           </h4>
-          <div className="space-y-4 text-muted-foreground">
-            <div>
-              <p className="font-semibold text-foreground text-lg">Ms. Lakshmi</p>
-              <p className="text-sm">Conference Manager</p>
+          <div className="flex flex-col md:flex-row gap-4 items-start">
+            <div className="flex-1 space-y-4 text-muted-foreground">
+              <div>
+                <p className="font-semibold text-foreground text-lg">Ms. Lakshmi</p>
+                <p className="text-sm">Conference Manager</p>
+              </div>
+              <div className="space-y-2">
+                <p className="flex items-center gap-2">
+                  <Mail className="text-accent flex-shrink-0" size={16} />
+                  <a href="mailto:hello@axygenpharmatech.com" className="hover:text-accent text-sm break-all">
+                    hello@axygenpharmatech.com
+                  </a>
+                </p>
+                <p className="flex items-center gap-2">
+                  <Phone className="text-accent flex-shrink-0" size={16} />
+                  <span className="text-sm">+91 9603978651</span>
+                </p>
+                <p className="flex items-center gap-2">
+                  <Phone className="text-accent flex-shrink-0" size={16} />
+                  <span className="text-sm">040 24342228</span>
+                </p>
+              </div>
             </div>
-            <div className="space-y-2">
-              <p className="flex items-center gap-2">
-                <Mail className="text-accent flex-shrink-0" size={16} />
-                <a href="mailto:hello@axygenpharmatech.com" className="hover:text-accent text-sm break-all">
-                  hello@axygenpharmatech.com
-                </a>
-              </p>
-              <p className="flex items-center gap-2">
-                <Phone className="text-accent flex-shrink-0" size={16} />
-                <span className="text-sm">+91 9603978651</span>
-              </p>
-              <p className="flex items-center gap-2">
-                <Phone className="text-accent flex-shrink-0" size={16} />
-                <span className="text-sm">040 24342228</span>
-              </p>
-            </div>
-            <div className="mt-4 pt-4 border-t border-border">
+            <div className="flex-shrink-0">
               <a
                 href="https://forms.gle/dnehKfEgFEtNmVag7"
                 target="_blank"
@@ -259,9 +261,12 @@ const RegistrationForm = () => {
                 <img
                   src={qrCode}
                   alt="QR Code - Click to open registration form"
-                  className="w-full max-w-[200px] mx-auto object-contain rounded-lg"
+                  className="w-32 h-32 object-contain"
                 />
               </a>
+              <p className="text-xs text-muted-foreground text-center mt-2">
+                Click to open
+              </p>
             </div>
           </div>
         </Card>

@@ -13,6 +13,7 @@ const Hero = () => {
     minutes: 0,
     seconds: 0,
   });
+  const [eventStarted, setEventStarted] = useState(false);
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
@@ -23,6 +24,7 @@ const Hero = () => {
       const distance = targetDate - now;
 
       if (distance < 0) {
+        setEventStarted(true);
         clearInterval(interval);
         return;
       }
@@ -128,29 +130,42 @@ const Hero = () => {
             {/* Right Side - Countdown Timer */}
             <div className="animate-fade-in" style={{ animationDelay: "0.8s", animationFillMode: "both" }}>
               <div className="bg-primary-foreground/5 backdrop-blur-md rounded-2xl p-4 md:p-6 border border-primary-foreground/20">
-                <p className="text-primary-foreground/80 mb-3 md:mb-4 text-center text-xs uppercase tracking-wider">
-                  Event Starts In
-                </p>
-                <div className="grid grid-cols-4 gap-2 md:gap-3">
-                  {[
-                    { value: timeLeft.days, label: "Days" },
-                    { value: timeLeft.hours, label: "Hours" },
-                    { value: timeLeft.minutes, label: "Min" },
-                    { value: timeLeft.seconds, label: "Sec" },
-                  ].map((item, index) => (
-                    <div
-                      key={index}
-                      className="bg-primary-foreground/10 backdrop-blur-md rounded-lg p-2 md:p-3 border border-primary-foreground/20 text-center"
-                    >
-                      <div className="text-xl sm:text-2xl md:text-3xl font-bold text-accent mb-1">
-                        {item.value.toString().padStart(2, "0")}
-                      </div>
-                      <div className="text-[9px] md:text-[10px] text-primary-foreground/80 uppercase tracking-wider">
-                        {item.label}
-                      </div>
+                {eventStarted ? (
+                  <div className="text-center py-8 md:py-12">
+                    <div className="text-3xl md:text-4xl font-bold text-accent mb-2">
+                      Event Started
                     </div>
-                  ))}
-                </div>
+                    <p className="text-primary-foreground/80 text-sm md:text-base">
+                      The workshop is now in progress
+                    </p>
+                  </div>
+                ) : (
+                  <>
+                    <p className="text-primary-foreground/80 mb-3 md:mb-4 text-center text-xs uppercase tracking-wider">
+                      Event Starts In
+                    </p>
+                    <div className="grid grid-cols-4 gap-2 md:gap-3">
+                      {[
+                        { value: timeLeft.days, label: "Days" },
+                        { value: timeLeft.hours, label: "Hours" },
+                        { value: timeLeft.minutes, label: "Min" },
+                        { value: timeLeft.seconds, label: "Sec" },
+                      ].map((item, index) => (
+                        <div
+                          key={index}
+                          className="bg-primary-foreground/10 backdrop-blur-md rounded-lg p-2 md:p-3 border border-primary-foreground/20 text-center"
+                        >
+                          <div className="text-xl sm:text-2xl md:text-3xl font-bold text-accent mb-1">
+                            {item.value.toString().padStart(2, "0")}
+                          </div>
+                          <div className="text-[9px] md:text-[10px] text-primary-foreground/80 uppercase tracking-wider">
+                            {item.label}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </>
+                )}
 
                 <div className="flex flex-col sm:flex-row gap-2 md:gap-3 mt-4 md:mt-6">
                   <Button
