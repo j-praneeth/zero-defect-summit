@@ -7,6 +7,7 @@ import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, User, Building2, Briefcase, CheckCircle2 } from "lucide-react";
 import { saveRegistration } from "@/lib/api";
 import { z } from "zod";
+import qrCode from "@/assets/qr.png";
 
 // Validation schema
 const registrationSchema = z.object({
@@ -247,6 +248,20 @@ const RegistrationForm = () => {
                 <Phone className="text-accent flex-shrink-0" size={16} />
                 <span className="text-sm">040 24342228</span>
               </p>
+            </div>
+            <div className="mt-4 pt-4 border-t border-border">
+              <a
+                href="https://forms.gle/dnehKfEgFEtNmVag7"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block cursor-pointer hover:opacity-80 transition-opacity"
+              >
+                <img
+                  src={qrCode}
+                  alt="QR Code - Click to open registration form"
+                  className="w-full max-w-[200px] mx-auto object-contain rounded-lg"
+                />
+              </a>
             </div>
           </div>
         </Card>

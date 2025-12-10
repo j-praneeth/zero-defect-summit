@@ -35,7 +35,7 @@ const Speaker = () => {
               </p>
 
               <p className="text-muted-foreground leading-relaxed mb-8">
-                He has authored 34 peer-reviewed articles on granulation, compression, coating, and printing, and serves
+                He has authored 30 peer-reviewed articles on granulation, compression, coating, and printing, and serves
                 on the editorial boards of Pharmaceutical Manufacturing and Tablets and Capsules. A sought-after
                 consultant and lecturer, Mr. Rowley has advised companies and law firms in 22 countries and presented at
                 the FDA and international industry forums.
@@ -84,7 +84,7 @@ const Speaker = () => {
                       <BookOpen className="text-accent" size={24} />
                     </div>
                     <div>
-                      <AnimatedCounter target={34} className="text-2xl font-bold text-foreground" />
+                      <AnimatedCounter target={30} className="text-2xl font-bold text-foreground" />
                       <div className="text-xs text-muted-foreground">Peer-Reviewed Articles</div>
                     </div>
                   </div>
