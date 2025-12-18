@@ -53,11 +53,6 @@ const Footer = () => {
                     Agenda
                   </Link>
                 </li>
-                <li>
-                  <Link to="/registration" className="hover:text-accent transition-colors">
-                    Register
-                  </Link>
-                </li>
               </ul>
             </div>
 

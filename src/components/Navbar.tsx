@@ -81,12 +81,6 @@ const Navbar = () => {
             >
               Sponsors
             </button>
-            <Button
-              onClick={() => navigateToPage("/registration")}
-              className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold"
-            >
-              Register Now
-            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -123,12 +117,6 @@ const Navbar = () => {
               >
                 Sponsors
               </button>
-              <Button
-                onClick={() => navigateToPage("/registration")}
-                className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold w-full"
-              >
-                Register Now
-              </Button>
             </div>
           </div>
         )}

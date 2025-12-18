@@ -1,12 +1,10 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Calendar, MapPin, Clock } from "lucide-react";
 import heroImage from "@/assets/hero-pharma.jpg";
 import initiativeLogo from "@/assets/initiative-logo.png";
 
 const Hero = () => {
-  const navigate = useNavigate();
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -48,12 +46,6 @@ const Hero = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToRegister = () => {
-    const element = document.getElementById("register");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -168,13 +160,6 @@ const Hero = () => {
                 )}
 
                 <div className="flex flex-col sm:flex-row gap-2 md:gap-3 mt-4 md:mt-6">
-                  <Button
-                    onClick={() => navigate("/registration")}
-                    size="lg"
-                    className="bg-accent hover:bg-accent/90 text-accent-foreground text-sm md:text-base px-4 md:px-6 py-4 md:py-5 font-semibold shadow-glow flex-1"
-                  >
-                    Register Now
-                  </Button>
                   <Button
                     onClick={() => {
                       const element = document.getElementById("about");

@@ -6,7 +6,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import Index from "./pages/Index";
 import AgendaPage from "./pages/AgendaPage";
-import RegistrationPage from "./pages/RegistrationPage";
 import InvoicePage from "./pages/InvoicePage";
 import TermsPage from "./pages/TermsPage";
 import PrivacyPage from "./pages/PrivacyPage";
@@ -27,7 +26,6 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/agenda" element={<AgendaPage />} />
-          <Route path="/registration" element={<RegistrationPage />} />
           <Route path="/invoice" element={<InvoicePage />} />
           <Route path="/terms" element={<TermsPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
